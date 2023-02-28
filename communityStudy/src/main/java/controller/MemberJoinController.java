@@ -15,14 +15,16 @@ import Member.MemberVO;
 public class MemberJoinController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
 		MemberVO m = new MemberVO();
-		m.setId((String)request.getAttribute("id"));
-		m.setPw((String)request.getAttribute("pw"));
-		m.setName((String)request.getAttribute("name"));
-		m.setAge((int)request.getAttribute("age"));
-		m.setEmail((String)request.getAttribute("email"));
-		m.setPhone((String)request.getAttribute("phone"));
-		m.setGender((String)request.getAttribute("gender"));
+		m.setId(request.getParameter("id"));
+		m.setPw(request.getParameter("pw"));
+		m.setName(request.getParameter("name"));
+		m.setAge(Integer.parseInt(request.getParameter("age")));
+		m.setEmail(request.getParameter("email"));
+		m.setPhone(request.getParameter("phone"));
+		m.setGender(request.getParameter("gender"));
 		MemberDAO.getInstance().addMemberVO(m);
 	}
 

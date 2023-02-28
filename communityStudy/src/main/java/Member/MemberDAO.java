@@ -18,19 +18,19 @@ public class MemberDAO {
 	private ResultSet rs;
 
 	public void getConnect() {
-		   String URL="jdbc:mysql://localhost:3307/community?characterEncoding=UTF-8&serverTimezone=UTC";
+		   String URL="jdbc:mysql://localhost:3307/community?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 		   String user="root";
 		   String password="root";
 		  try {
 			  Class.forName("com.mysql.cj.jdbc.Driver");		  
 			  conn=DriverManager.getConnection(URL, user, password);
-			  System.out.println("db 연동성공: " + conn );
 		   } catch (Exception e) {
 			  e.printStackTrace();
 		  }		   
 	}   
 	public void addMemberVO(MemberVO vo) {
 		String sql = "insert into member(id, pw, name, age, email, phone, gender) values(?,?,?,?,?,?,?)";
+		getConnect();
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, vo.getId());
