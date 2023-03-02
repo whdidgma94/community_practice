@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ include file="../../header.jsp" %>
 <body>
 	<h1>회원가입</h1>
 	<form action="${ctx}/memberJoin.do" method="post">

@@ -4,8 +4,22 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String writer;
+	private String writerId;
+	public String getWriterId() {
+		return writerId;
+	}
+	public void setWriterId(String writerId) {
+		this.writerId = writerId;
+	}
 	private String day;
+	private int num;
 	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public String getTitle() {
 		return title;
 	}

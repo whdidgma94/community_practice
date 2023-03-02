@@ -10,6 +10,7 @@ create table member(
     unique key(id)
 );
 select * from member;
+truncate member;
 create table board(
     num int primary key auto_increment, 
     title varchar(40) not null, 
@@ -17,4 +18,7 @@ create table board(
     writer varchar(20) not null,
     day varchar(20) not null
 );
+alter table board add writerId varchar(20) not null; 
 select * from board;
+select pw from member where id="아이디";
+truncate board;
